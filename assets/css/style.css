@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.set{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+.loader{
+    position: absolute;
+    top:44%;
+    left: 44%;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+}
+
+.sale_section{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.time{
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+}
+
+.time span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-blue{
+    background-color: #008c9e;
+}
+
+.bg-orange{
+    background-color: #c54800;
+}
+
+.bg-green{
+    background-color: #22a568;
+}
+.time span:nth-child(1){
+    width: 180px;
+    height:50px;
+    color:#faf8f8;
+   
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+.bg-light-blue{
+    background-color: #04a9bf;
+}
+.bg-light-green{
+    background-color: #8ee80e;
+}
+.bg-light-orange{
+    background-color: #ff5d00;
+}
+.time span:nth-child(2){
+    height: 150px;
+    color:#faf8f8;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.py-100{
+    padding: 100px 0px;
+}
+
+.container{
+    max-width: 1320px;
+    margin: 0px auto;
+}
+
+.q-a{
+    margin-bottom: 20px;
+    border:1px solid black;
+    border-left: none;
+    position: relative;
+    padding-left: 10px;
+    
+}
+
+.q-a::before{
+    content: '';
+    height: 90%;
+    border: 3px solid aqua;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.que{
+    border-bottom: 1px solid black;
+}
+
+.ans{
+    background-color: #38f0e72a;
+    display: none;
+}
+
+
+/* loader */
+
+
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,50%);
+	--trans-dur: 0.3s;
+	--trans-timing: cubic-bezier(0.65,0,0.35,1);
+	font-size: calc(14px + (30 - 14) * (100vw - 280px) / (3840 - 280));
+}
+
+.pl {
+	
+
+	margin: auto;
+	position: relative;
+	width: 8em;
+	height: 8em;
+
+	&:before,
+	&:after {
+		animation: pl-before 2.5s var(--trans-timing) infinite;
+		background-color: currentColor;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 75%;
+		left: 50%;
+		width: 25%;
+		height: 25%;
+		transform-origin: 100% 100%;
+	}
+	&:after {
+		animation-name: pl-after;
+	}
+}
+
+/* Dark theme */
+
+
+/* Animations */
+@keyframes pl-before {
+	from {
+		transform: rotate(0) translate(-100%,-100%) rotate(-90deg);
+	}
+	20% {
+		transform: rotate(0) translate(-100%,-100%) rotate(90deg);
+	}
+	40% {
+		transform: rotate(0) translate(-300%,-100%) rotate(90deg);
+	}
+	60% {
+		transform: rotate(90deg) translate(-300%,-100%) rotate(-90deg);
+	}
+	80% {
+		transform: rotate(90deg) translate(-100%,-100%) rotate(-90deg);
+	}
+	to {
+		transform: rotate(90deg) translate(-100%,100%) rotate(90deg);
+	}
+}
+@keyframes pl-after {
+	from,
+	20% {
+		transform: rotate(0) scale(1,1);
+	}
+	40% {
+		transform: rotate(0) scale(3,1);
+	}
+	60% {
+		transform: rotate(90deg) scale(3,1);
+	}
+	80% {
+		transform: rotate(90deg) scale(1,1);
+	}
+	to {
+		transform: rotate(90deg) scale(1,1) translate(0,200%);
+	}
+}

@@ -1,13 +1,12 @@
-
+$(document).ready(function () {
     
 
-       
-        $(".a").slideUp(3000);
+        $(".a").fadeOut(2000);
 
         $('.que').click(function(){
             $(this).next('.ans').slideToggle();
             $('.ans').not($(this).next('.ans')).slideUp();
         });
 
-
+    });
 
